@@ -5,7 +5,7 @@ class User:
 	Class to create user accounts and save their information
 	'''
 	# Class Variables
-	global users_list
+	# global users_list
 	users_list = []
 	def __init__(self,first_name,last_name,password):
 		'''
@@ -23,6 +23,17 @@ class User:
 		'''
 		User.users_list.append(self)
 		
+    # @classmethod
+	# def check_user(cls,first_name,password):
+	# 	'''
+	# 	Method that checks if the name and password entered match entries in the users_list
+	# 	'''
+	# 	current_user = ''
+	# 	for user in User.users_list:
+	# 		if (user.first_name == first_name and user.password == password):
+	# 			current_user = user.first_name
+	# 	return current_user
+	
 class Credential:
 	'''
 	Class to create  account credentials, generate passwords and save their information
