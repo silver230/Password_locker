@@ -1,8 +1,7 @@
-import random
-import string
+# import random
+# import string
 
 # Global Variables
-# global users_list 
 class User:
 	'''
 	Class to create user accounts and save their information
@@ -61,6 +60,16 @@ class Credential:
 		'''
 		# global users_list
 		Credential.credentials_list.append(self)
+	
+	@classmethod
+	def find_by_site_name(cls, site_name):
+		'''
+		Method that takes in a site_name and returns a credential that matches that site_name.
+		'''
+		for credential in cls.credentials_list:
+			if credential.site_name == site_name:
+				return credential
+    
 	@classmethod
 	def display_credentials(cls,user_name):
 		'''
@@ -71,15 +80,3 @@ class Credential:
 			if credential.user_name == user_name:
 				user_credentials_list.append(credential)
 		return user_credentials_list
-
-	@classmethod
-	def find_by_site_name(cls, site_name):
-		'''
-		Method that takes in a site_name and returns a credential that matches that site_name.
-		'''
-		for credential in cls.credentials_list:
-			if credential.site_name == site_name:
-				return credential	
-
-	
-	

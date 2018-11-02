@@ -1,5 +1,6 @@
 import unittest
 from user_credentials import User ,Credential
+# import pyperclip
 
 class TestUser(unittest.TestCase):
 	'''
@@ -8,6 +9,19 @@ class TestUser(unittest.TestCase):
 	Args:
 	    unittest.TestCase: helps in creating test cases
 	'''
+	def test_check_user(self):
+		'''
+		Function to test whether the login in function check_user works as expected
+		'''
+		self.new_user = User('silver','staar','pswd100')
+		self.new_user.save_user()
+
+		for user in User.users_list:
+			if user.first_name == user.first_name and user.password == user.password:
+				current_user = user.first_name
+		return current_user
+            
+
 	def setUp(self):
 		'''
 		Function to create a user account before each test
@@ -27,7 +41,7 @@ class TestUser(unittest.TestCase):
 		Test to check if the new users info is saved into the users list
 		'''
 		self.new_user.save_user()
-		self.assertEqual(len(User.users_list),1)
+		self.assertEqual(len(User.users_list),2)
 
 class TestCredentials(unittest.TestCase):
 	'''
@@ -36,22 +50,7 @@ class TestCredentials(unittest.TestCase):
 	Args:
 	    unittest.TestCase: helps in creating test cases
 	'''	
-	def test_check_user(self):
-		'''
-		Function to test whether the login in function check_user works as expected
-		'''
-		self.new_user = User('silver','staar','pswd100')
-		self.new_user.save_user()
-		user2 = User('gerald','waweru','pswd100')
-		user2.save_user()
-
-		for user in User.users_list:
-			if user.first_name == user2.first_name and user.password == user2.password:
-				current_user = user.first_name
-		return current_user
-
-		self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
-
+			
 	def setUp(self):
 		'''
 		Function to create an account's credentials before each test
@@ -80,7 +79,7 @@ class TestCredentials(unittest.TestCase):
 		self.new_credential.save_credentials()
 		twitter = Credential('gerald','Twitter','gerald waweru','pswd526')
 		twitter.save_credentials()
-		gmail = Credential('gerald','Gmail','gerald waweru','pswd200')
+		gmail = Credential('gerald','Gmail','geraldwaweru@gmail','pswd200')
 		gmail.save_credentials()
 		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),3)	
 
@@ -93,6 +92,8 @@ class TestCredentials(unittest.TestCase):
 		twitter.save_credentials()
 		credential_exists = Credential.find_by_site_name('Twitter')
 		self.assertEqual(credential_exists,twitter)	
+
+
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
