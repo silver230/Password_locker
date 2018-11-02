@@ -16,7 +16,6 @@ def save_user(user):
 	Function to save a new user account
 	'''
 	User.save_user(user)
-	
 def generate_password():
 	'''
 	Function to generate a password automatically
