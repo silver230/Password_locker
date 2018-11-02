@@ -1,7 +1,7 @@
 # Password_locker
 a password generating program  made by python3.6
 # Author 
-* SYLVESTER OMONDI
+ SYLVESTER OMONDI
 ## Description
 Password Locker is a terminal run python application that allows users to store details i.e. usernames and passwords of their various accounts.
 
@@ -9,9 +9,9 @@ Password Locker is a terminal run python application that allows users to store 
 These are the behaviours that the application implements for use by a user.
 
 #### As a user I would like:
-* To create an account with my details - log in and password
-* Store my existing login credentials
-* Generate a password for a new credential/account
+ To create an account with my details - log in and password
+Store my existing login credentials
+ Generate a password for a new credential/account
 
 ## Specifications
 * Display codes for navigation
@@ -29,26 +29,26 @@ These are the behaviours that the application implements for use by a user.
 * python3.6
 
 ### Cloning
-* In your terminal:
+ In your terminal:
         
         $ git clone https://github.com/silver230/Password_locker/
         $ cd Password-locker
 
 ## Running the Application
-* To run the application, in your terminal:
+To run the application, in your terminal:
 
         $ chmod +x run.py
         $ ./run.py
         
 ## Testing the Application
-* To run the tests for the class file:
+ To run the tests for the class file:
 
         $ python3.6 user_credential_testpy
        
 
         
 ## Technologies Used
-* Python3.6
+Python3.6
 
 ## License
 MIT &copy;2018 [SYLVESTER](https://github.com/silver230/)
