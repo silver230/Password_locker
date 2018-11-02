@@ -27,7 +27,7 @@ class TestUser(unittest.TestCase):
 		Test to check if the new users info is saved into the users list
 		'''
 		self.new_user.save_user()
-		self.assertEqual(len(User.users_list),3)
+		self.assertEqual(len(User.users_list),1)
 
 class TestCredentials(unittest.TestCase):
 	'''
@@ -51,6 +51,38 @@ class TestCredentials(unittest.TestCase):
 		return current_user
 
 		self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
-	
+
+	def setUp(self):
+		'''
+		Function to create an account's credentials before each test
+		'''
+		self.new_credential = Credential('gerald','twitter','geraldwaweru','pswd526')
+
+	def test__init__(self):
+		'''
+		Test to if check the initialization/creation of credential instances is properly done
+		'''
+		self.assertEqual(self.new_credential.user_name,'gerald')
+		self.assertEqual(self.new_credential.site_name,'twitter')
+		self.assertEqual(self.new_credential.account_name,'geraldwaweru')
+		self.assertEqual(self.new_credential.password,'pswd526')
+	def tearDown(self):
+		'''
+		Function to clear the credentials list after every test
+		'''
+		Credential.credentials_list = []
+		User.users_list = []
+
+	def test_display_credentials(self):
+		'''
+		Test to check if the display_credentials method, displays the correct credentials.
+		'''
+		self.new_credential.save_credentials()
+		twitter = Credential('Jane','Twitter','maryjoe','pswd100')
+		twitter.save_credentials()
+		gmail = Credential('Jane','Gmail','maryjoe','pswd200')
+		gmail.save_credentials()
+		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)	
+
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

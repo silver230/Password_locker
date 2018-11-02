@@ -61,4 +61,16 @@ class Credential:
 		'''
 		# global users_list
 		Credential.credentials_list.append(self)
+	@classmethod
+	def display_credentials(cls,user_name):
+		'''
+		Class method to display the list of credentials saved
+		'''
+		user_credentials_list = []
+		for credential in cls.credentials_list:
+			if credential.user_name == user_name:
+				user_credentials_list.append(credential)
+		return user_credentials_list
+
+	
 	
