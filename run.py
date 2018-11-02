@@ -88,7 +88,7 @@ def main():
 				print(' ')
 				while True:
 					print("-"*60)
-					print('Navigation codes: \n cc-Create a Credential \n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
+					print('Navigation using: \n cc-Create a Credential \n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
 					short_code = input('Enter a choice: ').lower().strip()
 					print("-"*60)
 					if short_code == 'ex':
