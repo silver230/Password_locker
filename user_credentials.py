@@ -1,5 +1,5 @@
-# import random
-# import string
+import random
+import string
 
 # Global Variables
 class User:
