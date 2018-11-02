@@ -17,6 +17,11 @@ def save_user(user):
 	'''
 	User.save_user(user)
 
+def generate_password():
+	'''
+	Function to generate a password automatically
+	'''
+	 
 
 def verify_user(first_name,password):
 	'''
